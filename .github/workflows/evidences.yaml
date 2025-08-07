@@ -16,16 +16,16 @@ jobs:
       - name: Push binary
         run: echo "Pushing Binary to ECR..."
 
-      - name: Register build artifacts in Cloudbees platform
-        uses: cloudbees-io-gha/register-build-artifact@v1
-        id: go-action
-        with:
-          name: "GHA App"
-          version: 1.0.5
-          url: docker.io/MyApp/GHA App:1.0.5
-          digest: "sha256:1234567890abcdef1234abcdef12ab3456ab7890abcd1234bcdef1234abcd123"
-          type: "docker"
-          cloudbees-pat: ${{ secrets.CBP_PAT }}
+      #- name: Register build artifacts in Cloudbees platform
+      #  uses: cloudbees-io-gha/register-build-artifact@v1
+      #  id: go-action
+      #  with:
+      #    name: "GHA App"
+      #    version: 1.0.5
+      #    url: docker.io/MyApp/GHA App:1.0.5
+      #    digest: "sha256:1234567890abcdef1234abcdef12ab3456ab7890abcd1234bcdef1234abcd123"
+      #    type: "docker"
+      #    cloudbees-pat: ${{ secrets.CBP_PAT }}
 
       - name: Publish evidence
         uses: cloudbees-io-gha/publish-evidence-item@v1
